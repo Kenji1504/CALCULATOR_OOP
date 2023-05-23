@@ -35,4 +35,25 @@ class Calculator:
                 product = f"\n{num_1} x {num_2} = {resultant_value}"
                 print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(product.center(65), font= "ogre"))
                 break
-            
+
+             # if response is '/' 
+            elif math_operator == '/':
+                # inside while loop
+                while True:
+                    # try dividing the first inputted number to the second inputted number
+                    try:
+                        resultant_value = num_1 / num_2
+                        quotient = f"\n{num_1} / {num_2} = {resultant_value}"
+                        print("Here's for the answer:")
+                        print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(quotient.center(65), font= "ogre"))
+                        break
+                    # use except function to capture any Zero Division Error
+                    except ZeroDivisionError:
+                        print("\033[31m" + "\nInvalid Input. You're trying to divide a particular number by 0\n")
+                        print("\033[95m" + "Please try again.")
+                    # break the loop
+                    break
+                break
+            # else, print Invalid Input
+            else:
+                print("\033[31m" + "INVALID INPUT, please try again")
