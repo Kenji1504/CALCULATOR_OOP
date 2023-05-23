@@ -1,4 +1,3 @@
-
 # create a class named 'UserInterface'
 class UserInterface:
 # create a method that asks for user input
@@ -7,7 +6,7 @@ class UserInterface:
         while True:
 	        # try asking the user to input two numerical values.
             try:
-                value_input = float(input("\nInput the first value: "))
+                value_input = float(input("\nInput the numerical value: "))
                 # break the loop if inputs are valid
                 return value_input
 	        # use except function to capture any Value Error
@@ -15,11 +14,3 @@ class UserInterface:
                 print("\033[31m" + "\nInvalid Input, input numerical characters only.\n")
                 print("\033[95m" + "Please try again.\n")
 
-    def user_input_2(self):
-        while True:
-            try:
-                value_input = float(input("\nInput the second value: "))
-                return value_input
-            except ValueError:
-                print("\033[31m" + "\nInvalid Input, input numerical characters only.\n")
-                print("\033[95m" + "Please try again.\n")
