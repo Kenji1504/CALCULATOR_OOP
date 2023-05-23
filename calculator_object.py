@@ -1,4 +1,6 @@
 import pyfiglet
+from user_interface import UserInterface
+user_interface = UserInterface()
 # create a class named 'Calculator'
 class Calculator:
 # create a method to determine what mathematical operator will be used
@@ -57,3 +59,28 @@ class Calculator:
             # else, print Invalid Input
             else:
                 print("\033[31m" + "INVALID INPUT, please try again")
+
+# create a method that can loop the program
+    def loop_calculator(self):
+        # To loop the program, create a while loop
+        while True:
+            # call out the calculator function
+            num_1 = user_interface.user_input()
+            num_2 = user_interface.user_input()
+            self.math_operator(num_1, num_2)
+            # ask user if they want to try again
+            while True:
+                repeat_program = str(input("\033[95m" + "\nDo you want to try again? (y/n): "))
+                repeat_program = repeat_program.lower()
+                # if response is 'yes', continue
+                if repeat_program == "y":
+                    break
+                # if response in 'no', break
+                elif repeat_program == "n":
+                    # end program
+                    END_PROGRAM = "END"
+                    print ("\n" + "\033[1m" + END_PROGRAM.center(90, "-"))
+                    exit()
+                else:
+                    # print 'Invalid Input'
+                    print("\n\033[31m" + "INVALID INPUT, please try again.")
