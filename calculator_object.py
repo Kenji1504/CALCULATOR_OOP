@@ -1,3 +1,4 @@
+import pyfiglet
 # create a class named 'Calculator'
 class Calculator:
 # create a method to determine what mathematical operator will be used
@@ -16,7 +17,14 @@ class Calculator:
                 print("Here's for the answer:")
                 resultant_value = num_1 + num_2
                 sum = f"\n{num_1} + {num_2} = {resultant_value}"
-                print(sum)
+                print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(sum.center(65), font= "ntgreek"))
                 break
-
+            
+            # if response '-', subtract the first inputted number to the second inputted number
+            elif math_operator == '-':
+                print("Here's for the answer:")
+                resultant_value = num_1 - num_2
+                difference = f"\n{num_1} - {num_2} = {resultant_value}"
+                print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(difference.center(65), font= "ntgreek"))
+                break 
             
