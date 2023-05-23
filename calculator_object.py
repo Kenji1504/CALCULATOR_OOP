@@ -1,6 +1,9 @@
 import pyfiglet
+import time
 from user_interface import UserInterface
+
 user_interface = UserInterface()
+
 # create a class named 'Calculator'
 class Calculator:
 # create a method to determine what mathematical operator will be used
@@ -8,15 +11,21 @@ class Calculator:
     def math_operator(self, num_1, num_2):
         while True:
             # ask user for what operator to use
+            time.sleep(1)
             print("\033[95m" + "\nInput one of the following values to determine what mathematical operator will be used for calculation.\n")
             print("Use '+' to indicate addition\nUse '-' to indicate subtraction\
                 \nUse 'x' to indicate multiplication\nUse'/' to indicate division")
             math_operator = str(input("\nInput what operator to use: "))
             math_operator = math_operator.lower()
-            
+
+            for dot in range(3):
+                print(".\n")
+                time.sleep(1)
+
             # if response is '+', add two values
             if math_operator == '+':
                 print("Here's for the answer:")
+                time.sleep(1)
                 resultant_value = num_1 + num_2
                 sum = f"\n{num_1} + {num_2} = {resultant_value}"
                 print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(sum.center(65), font= "ntgreek"))
@@ -25,6 +34,7 @@ class Calculator:
             # if response '-', subtract the first inputted number to the second inputted number
             elif math_operator == '-':
                 print("Here's for the answer:")
+                time.sleep(1)
                 resultant_value = num_1 - num_2
                 difference = f"\n{num_1} - {num_2} = {resultant_value}"
                 print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(difference.center(65), font= "ntgreek"))
@@ -33,6 +43,7 @@ class Calculator:
             # if response is 'x', multiply the first inputted number to the second inputted number
             elif math_operator == 'x':
                 print("Here's for the answer:")
+                time.sleep(1)
                 resultant_value = num_1 * num_2
                 product = f"\n{num_1} x {num_2} = {resultant_value}"
                 print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(product.center(65), font= "ogre"))
@@ -47,10 +58,12 @@ class Calculator:
                         resultant_value = num_1 / num_2
                         quotient = f"\n{num_1} / {num_2} = {resultant_value}"
                         print("Here's for the answer:")
+                        time.sleep(1)
                         print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(quotient.center(65), font= "ogre"))
                         break
                     # use except function to capture any Zero Division Error
                     except ZeroDivisionError:
+                        time.sleep(1)
                         print("\033[31m" + "\nInvalid Input. You're trying to divide a particular number by 0\n")
                         print("\033[95m" + "Please try again.")
                     # break the loop
@@ -58,6 +71,7 @@ class Calculator:
                 break
             # else, print Invalid Input
             else:
+                time.sleep(1)
                 print("\033[31m" + "INVALID INPUT, please try again")
 
 # create a method that can loop the program
@@ -70,6 +84,7 @@ class Calculator:
             self.math_operator(num_1, num_2)
             # ask user if they want to try again
             while True:
+                time.sleep(1)
                 repeat_program = str(input("\033[95m" + "\nDo you want to try again? (y/n): "))
                 repeat_program = repeat_program.lower()
                 # if response is 'yes', continue
@@ -78,6 +93,7 @@ class Calculator:
                 # if response in 'no', break
                 elif repeat_program == "n":
                     # end program
+                    time.sleep(1)
                     END_PROGRAM = "END"
                     print ("\n" + "\033[1m" + END_PROGRAM.center(90, "-"))
                     exit()
