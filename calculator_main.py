@@ -12,5 +12,4 @@ num_1 = user_interface.user_input()
 num_2 = user_interface.user_input_2()
 # ask for mathematical operator
 math_operator = calculator.math_operator(num_1, num_2)
-# create a method that can loop the program 
-# print the output
+# create a method that can loop the program

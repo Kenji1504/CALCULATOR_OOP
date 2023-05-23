@@ -2,7 +2,7 @@ import pyfiglet
 # create a class named 'Calculator'
 class Calculator:
 # create a method to determine what mathematical operator will be used
-
+# (the output will be also printed when this method is called out)
     def math_operator(self, num_1, num_2):
         while True:
             # ask user for what operator to use
@@ -27,4 +27,12 @@ class Calculator:
                 difference = f"\n{num_1} - {num_2} = {resultant_value}"
                 print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(difference.center(65), font= "ntgreek"))
                 break 
+
+            # if response is 'x', multiply the first inputted number to the second inputted number
+            elif math_operator == 'x':
+                print("Here's for the answer:")
+                resultant_value = num_1 * num_2
+                product = f"\n{num_1} x {num_2} = {resultant_value}"
+                print("\033[1m" + "\033[95m" + pyfiglet.figlet_format(product.center(65), font= "ogre"))
+                break
             
