@@ -4,6 +4,7 @@
 # Exponentiation, Square root, and Pythagorean Theorem 
 
 import time
+import math
 from calculator_object import Calculator
 
 
@@ -28,3 +29,9 @@ class UpgradedCalculator(Calculator):
         print("\033[1m" + "\033[95m" + answer.center(100))
         time.sleep(1)
     # create a method that solves for the square root of a number
+    def square_root(self, num_1):
+        time.sleep(1)
+        resultant_value = math.sqrt(num_1)
+        answer = f"\n sqrt({num_1}) = {resultant_value}"
+        print("\033[1m" + "\033[95m" + answer.center(100))
+        time.sleep(1)
