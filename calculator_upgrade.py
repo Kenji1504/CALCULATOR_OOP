@@ -35,3 +35,11 @@ class UpgradedCalculator(Calculator):
         answer = f"\n sqrt({num_1}) = {resultant_value}"
         print("\033[1m" + "\033[95m" + answer.center(100))
         time.sleep(1)
+    
+    # create a method that performs calculation of Pythagorean Theorem
+    def pythagorean(self, num_1, num_2):
+        time.sleep(1)
+        resultant_value = math.sqrt(math.pow(num_1, 2) + math.pow(num_2, 2))
+        answer = f"\n Hypotenuse = {resultant_value}"
+        print("\033[1m" + "\033[95m" + answer.center(100))
+        time.sleep(1)
